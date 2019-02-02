@@ -32,8 +32,10 @@ Shader "Almgp/vfx1/mesh_dissolve_particel" {
             CGPROGRAM
             #pragma vertex vert
             #pragma fragment frag
+			#if !UNITY_PASS_FORWARDBASE
             #define UNITY_PASS_FORWARDBASE
-            #include "UnityCG.cginc"
+			#endif
+			#include "UnityCG.cginc"
             #pragma multi_compile_fwdbase_fullshadows
             #pragma multi_compile_fog
             #pragma only_renderers d3d9 d3d11 glcore gles 
@@ -115,7 +117,9 @@ Shader "Almgp/vfx1/mesh_dissolve_particel" {
             CGPROGRAM
             #pragma vertex vert
             #pragma fragment frag
+			#if !UNITY_PASS_SHADOWCASTER
             #define UNITY_PASS_SHADOWCASTER
+			#endif
             #include "UnityCG.cginc"
             #include "Lighting.cginc"
             #pragma fragmentoption ARB_precision_hint_fastest

@@ -5,10 +5,11 @@ using UnityEngine;
 [RequireComponent(typeof(LineRenderer))]
 public class WallCollider : MonoBehaviour
 {
-    LineRenderer lineRenderer;
+    LineRenderer lineRenderer; // would use this to draw border
     public float edgeWidth=0.02f;
     void Awake()
     {
+        Application.targetFrameRate = 60;
         lineRenderer = GetComponent<LineRenderer>();
         lineRenderer.positionCount = 5;
         lineRenderer.startWidth = edgeWidth;
@@ -29,9 +30,14 @@ public class WallCollider : MonoBehaviour
 
         // add or use existing EdgeCollider2D
         var edge = GetComponent<EdgeCollider2D>() == null ? gameObject.AddComponent<EdgeCollider2D>() : GetComponent<EdgeCollider2D>();
+        edge.sharedMaterial.bounciness = 1;
         var edgePoints2d = new[] { (Vector2)bottomLeft, (Vector2)topLeft, (Vector2)topRight, (Vector2)bottomRight, (Vector2)bottomLeft };
-        var edgePoints3d = new[] { bottomLeft, topLeft, topRight, bottomRight, bottomLeft };
-        //lineRenderer.SetPositions(edgePoints3d);
         edge.points = edgePoints2d;
+        
+        // this code would draw the border, i dont think we need it
+        //var edgePoints3d = new[] { bottomLeft, topLeft, topRight, bottomRight, bottomLeft };
+        //lineRenderer.SetPositions(edgePoints3d);
     }
+
+
 }
