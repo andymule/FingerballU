@@ -1,26 +1,37 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using Mirror;
 using UnityEngine;
 
-public class UserInput : MonoBehaviour {
-    public GameObject myBall;
+public class UserInput : NetworkBehaviour //MonoBehaviour
+{
+    private GameObject myBall;
     public float Sensitivity = 20f;
     public float MaxAccel = 2f;
     public float MaxSpeed = 20f;
-    //private Rigidbody2D myBody;
 
     private float boostAccel = 5f;
     private bool isBoosting = false;
 
+
     private void Start()
     {
+        if (!isLocalPlayer)
+        {
+            return;
+        }
+
+        myBall = gameObject;
         Input.multiTouchEnabled = true;
-        //myBody = myBall.GetComponent<Rigidbody2D>();
     }
     private int mainFingerID = -1;
-    void Update () {
+    void Update()
+    {
+        if (!isLocalPlayer)
+        {
+            return;
+        }
+
         Vector2 diff = Vector2.zero;
-        if (Input.touchCount == 1 && Input.GetTouch(0).phase == TouchPhase.Began )
+        if (Input.touchCount == 1 && Input.GetTouch(0).phase == TouchPhase.Began)
         {
             mainFingerID = Input.GetTouch(0).fingerId;
         }
@@ -30,15 +41,15 @@ public class UserInput : MonoBehaviour {
             {
                 if (Input.GetTouch(i).fingerId == mainFingerID)
                 {
-                    var touchpoint = Camera.main.ScreenToWorldPoint(Input.GetTouch(i).position);
+                    Vector3 touchpoint = Camera.main.ScreenToWorldPoint(Input.GetTouch(i).position);
                     diff = touchpoint - myBall.transform.position;
                 }
             }
         }
-       else if (Input.GetMouseButton(0))
+        else if (Input.GetMouseButton(0))
         {
-            var touch = Input.mousePosition;
-            var touchpoint = Camera.main.ScreenToWorldPoint(touch);
+            Vector3 touch = Input.mousePosition;
+            Vector3 touchpoint = Camera.main.ScreenToWorldPoint(touch);
             diff = touchpoint - myBall.transform.position;
         }
 
@@ -59,9 +70,14 @@ public class UserInput : MonoBehaviour {
         {
             diff *= Sensitivity;
             if (isBoosting)
+            {
                 diff = Vector3.ClampMagnitude(diff, boostAccel);
+            }
             else
-                diff =Vector3.ClampMagnitude(diff, MaxAccel);
+            {
+                diff = Vector3.ClampMagnitude(diff, MaxAccel);
+            }
+
             myBall.GetComponent<Rigidbody2D>().AddForce(diff);
         }
     }

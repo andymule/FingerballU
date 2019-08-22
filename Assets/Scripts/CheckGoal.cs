@@ -5,16 +5,6 @@ using UnityEngine;
 public class CheckGoal : MonoBehaviour {
     public Transform RedGoal;
     public Transform BlueGoal;
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         var trail = this.GetComponent<TrailRenderer>();
