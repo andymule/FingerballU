@@ -1,7 +1,10 @@
-﻿using Mirror;
+﻿using BeardedManStudios.Forge.Networking.Generated;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using BeardedManStudios.Forge.Networking;
 
-public class UserInput : NetworkBehaviour //MonoBehaviour
+public class UserInput : PlayerBehavior 
 {
     private GameObject myBall;
     public float Sensitivity = 20f;
@@ -14,18 +17,18 @@ public class UserInput : NetworkBehaviour //MonoBehaviour
 
     private void Start()
     {
-        if (!isLocalPlayer)
+        if (!networkObject.IsOwner)
         {
             return;
         }
-
+        networkObject.UpdateInterval = 1;
         myBall = gameObject;
         Input.multiTouchEnabled = true;
     }
     private int mainFingerID = -1;
     void Update()
     {
-        if (!isLocalPlayer)
+        if (!networkObject.IsOwner)
         {
             return;
         }

@@ -7,6 +7,8 @@ public class CheckGoal : MonoBehaviour {
     public Transform BlueGoal;
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.gameObject.tag != "Goal")
+            return;
         var trail = this.GetComponent<TrailRenderer>();
         trail.Clear();
         var t = trail.time;

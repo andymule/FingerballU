@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BallSqueeze : MonoBehaviour {
     private Rigidbody2D myBody;
-    public float SqueezeFactor = .3f;
+    public float SqueezeFactor = .6f;
 
     private void Start()
     {

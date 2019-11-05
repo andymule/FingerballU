@@ -198,6 +198,8 @@ GameObject:
   - component: {fileID: 58780735776784424}
   - component: {fileID: 50618552527703514}
   - component: {fileID: 96712236893992052}
+  - component: {fileID: 8789599731203475666}
+  - component: {fileID: -2287839780319301636}
   m_Layer: 0
   m_Name: YourBall
   m_TagString: Ball
@@ -408,3 +410,30 @@ TrailRenderer:
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
   m_Emitting: 1
+--- !u!114 &8789599731203475666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1720846151047786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3675680861f7b0d43b48accc3a76b5c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-2287839780319301636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1720846151047786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 379b6f1c9fae42a40811b733796a7769, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sensitivity: 30
+  MaxAccel: 3
+  MaxSpeed: 4

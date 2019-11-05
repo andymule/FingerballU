@@ -12,8 +12,6 @@ GameObject:
   - component: {fileID: 33005046383192028}
   - component: {fileID: 23387787097066748}
   - component: {fileID: 96143379814614846}
-  - component: {fileID: 7914704872188239638}
-  - component: {fileID: 2893477274873142556}
   m_Layer: 0
   m_Name: Boost
   m_TagString: Untagged
@@ -186,36 +184,6 @@ TrailRenderer:
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
   m_Emitting: 0
---- !u!114 &7914704872188239638
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1072712786571302}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serverOnly: 0
-  localPlayerAuthority: 0
-  m_AssetId: 
-  m_SceneId: 3538493933
---- !u!114 &2893477274873142556
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1072712786571302}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f74aedd71d9a4f55b3ce499326d45fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  syncInterval: 0
-  compressRotation: 1
 --- !u!1 &1132828009858838
 GameObject:
   m_ObjectHideFlags: 0
@@ -230,9 +198,8 @@ GameObject:
   - component: {fileID: 58357964420871098}
   - component: {fileID: 50262011599566642}
   - component: {fileID: 96867735846998760}
-  - component: {fileID: 1686921298704693770}
-  - component: {fileID: -2764248925245171450}
   - component: {fileID: 2716332246826731161}
+  - component: {fileID: -1267860600258662803}
   m_Layer: 0
   m_Name: MyBall
   m_TagString: Ball
@@ -443,36 +410,6 @@ TrailRenderer:
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
   m_Emitting: 1
---- !u!114 &1686921298704693770
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1132828009858838}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serverOnly: 0
-  localPlayerAuthority: 1
-  m_AssetId: 
-  m_SceneId: 762449125
---- !u!114 &-2764248925245171450
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1132828009858838}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f74aedd71d9a4f55b3ce499326d45fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  syncInterval: 0
-  compressRotation: 1
 --- !u!114 &2716332246826731161
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -485,7 +422,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 379b6f1c9fae42a40811b733796a7769, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  syncInterval: 0.1
   Sensitivity: 30
   MaxAccel: 3
   MaxSpeed: 4
+--- !u!114 &-1267860600258662803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1132828009858838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3675680861f7b0d43b48accc3a76b5c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
