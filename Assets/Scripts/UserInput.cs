@@ -1,10 +1,7 @@
 ﻿using BeardedManStudios.Forge.Networking.Generated;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using BeardedManStudios.Forge.Networking;
 
-public class UserInput : PlayerBehavior 
+public class UserInput : PlayerBehavior
 {
     private GameObject myBall;
     public float Sensitivity = 20f;
@@ -28,7 +25,7 @@ public class UserInput : PlayerBehavior
     private int mainFingerID = -1;
     void Update()
     {
-        if (!networkObject.IsOwner)
+        if (networkObject == null || !networkObject.IsOwner)
         {
             return;
         }

@@ -15,7 +15,6 @@ public class WallCollider : MonoBehaviour
     public float edgeWidth=0.02f;
     void Awake()
     {
-        startPos = BL.position.x;
         Application.targetFrameRate = 60;
         lineRenderer = GetComponent<LineRenderer>();
         lineRenderer.positionCount = 5;
@@ -29,7 +28,8 @@ public class WallCollider : MonoBehaviour
 
         var cam = Camera.main;
         if (!cam.orthographic) { Debug.LogError("Camera.main is not Orthographic, failed to create edge colliders"); return; }
-        
+
+        startPos = BL.position.x;
         var scale = (BL.position.x / startPos);
 
         var bottomLeft = cam.ScreenToWorldPoint(new Vector3(0, 0, cam.nearClipPlane));
