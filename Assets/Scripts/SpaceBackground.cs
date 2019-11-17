@@ -10,11 +10,11 @@ public class SpaceBackground : MonoBehaviour
     List<GameObject> stars;
     private List<GameObject> starsToRespawn;
     private Dictionary<int, Vector2> starSpeed; // lets manually do star velocity bc y not
-    public Vector2 moveVelocity = new Vector3(.01f, .013f);
+    public Vector2 moveVelocity = new Vector3(.03f, .06f);
     [Range(0f, 1f)]
-    public float starVelDepthSpeedVariation = .01f;
+    public float starVelDepthSpeedVariation = .03f;
     public bool rotateStars = true; // slowly change background
-    private float rotateStepMax = .1f;
+    private float rotateStepMax = .04f;
 
     void Start()
     {
@@ -26,8 +26,8 @@ public class SpaceBackground : MonoBehaviour
         {
             Vector3 randoPos = new Vector3(Random.value * 30 - 15f, Random.value * 30f - 15f, 0);
             randoPos += StartPosition.transform.localPosition / 2;
-            var newStar = Instantiate(StarPrefab, randoPos, Quaternion.identity);
-            newStar.transform.parent = this.transform;
+            GameObject newStar = Instantiate(StarPrefab, randoPos, Quaternion.identity);
+            newStar.transform.parent = transform;
             stars.Add(newStar);
             float v = (Random.value * starVelDepthSpeedVariation);
             Vector2 randoSpeed = new Vector2(v + moveVelocity.x, v + moveVelocity.y);
@@ -35,19 +35,22 @@ public class SpaceBackground : MonoBehaviour
         }
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        this.transform.Rotate(Vector3.forward, rotateStepMax * Random.value); // spin background
-
-        for (int i = 0; i < stars.Capacity; i++)
+        if (rotateStars)
         {
-            stars[i].transform.localPosition += (Vector3)starSpeed[i];
+            transform.Rotate(Vector3.forward, rotateStepMax * Random.value); // spin background
+        }
+
+        for (int i = 0; i < stars.Capacity; i++) // velocity update
+        {
+            stars[i].transform.localPosition += (Vector3)starSpeed[i] * Time.timeScale;
             if (Vector2.Distance(stars[i].transform.localPosition, StartPosition.transform.localPosition) > RespawnDistance)
             {
                 starsToRespawn.Add(stars[i]);
             }
         }
-        foreach (GameObject g in starsToRespawn)
+        foreach (GameObject g in starsToRespawn) // move stars back to spawn point if too far, randomize placement
         {
             Vector3 randomNudge = Random.insideUnitCircle;
             randomNudge = new Vector2(randomNudge.x * StartPosition.transform.localScale.x / 2, randomNudge.y * StartPosition.transform.localScale.z / 2);

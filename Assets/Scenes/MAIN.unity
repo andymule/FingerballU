@@ -274,8 +274,8 @@ MonoBehaviour:
   StarPrefab: {fileID: 957783969282282427, guid: 2f36f807889b87447893b5ceaaedec4d,
     type: 3}
   StartPosition: {fileID: 399740164}
-  moveVelocity: {x: 0.025, y: 0.035}
-  starVelDepthSpeedVariation: 0.01
+  moveVelocity: {x: 0.01, y: 0.02}
+  starVelDepthSpeedVariation: 0.03
   rotateStars: 1
 --- !u!1 &52674045
 GameObject:
