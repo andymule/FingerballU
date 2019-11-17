@@ -18,7 +18,10 @@ public class CheckGoal : MonoBehaviour {
         //trail.enabled = false;
         this.transform.position = new Vector3(0, 0, 0);
         this.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-        Instantiate(BlueGoal, collision.transform.position, Quaternion.identity);
+        if (collision.gameObject.name == "BlueGoal")
+            Instantiate(RedGoal, collision.transform.position, Quaternion.identity); // show other team color
+        else
+            Instantiate(BlueGoal, collision.transform.position, Quaternion.identity);
         //trail.enabled = true;
         //trail.emitting = true;
         trail.time = t;
