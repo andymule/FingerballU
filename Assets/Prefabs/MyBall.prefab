@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 33005046383192028}
   - component: {fileID: 23387787097066748}
   - component: {fileID: 96143379814614846}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Boost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -200,7 +200,7 @@ GameObject:
   - component: {fileID: 96867735846998760}
   - component: {fileID: 2716332246826731161}
   - component: {fileID: -1267860600258662803}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: MyBall
   m_TagString: Ball
   m_Icon: {fileID: 0}

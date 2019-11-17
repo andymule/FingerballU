@@ -16,9 +16,7 @@ GameObject:
   - component: {fileID: 96856168687715638}
   - component: {fileID: 114842102165999670}
   - component: {fileID: 114055556123131860}
-  - component: {fileID: 2456998677395542242}
-  - component: {fileID: 7840565159870159664}
-  - component: {fileID: 2539970550303352695}
+  - component: {fileID: 6812820982423031713}
   m_Layer: 0
   m_Name: Flix
   m_TagString: Ball
@@ -255,7 +253,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SqueezeFactor: 0.5
---- !u!114 &2456998677395542242
+--- !u!114 &6812820982423031713
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -264,38 +262,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1251770030460998}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Script: {fileID: 11500000, guid: 45f3611a5c89c374b8bbab8ddb4b2c38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  serverOnly: 0
-  localPlayerAuthority: 0
-  m_AssetId: 
-  m_SceneId: 3827445328
---- !u!114 &7840565159870159664
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1251770030460998}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f74aedd71d9a4f55b3ce499326d45fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  syncInterval: 0
-  compressRotation: 1
---- !u!114 &2539970550303352695
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1251770030460998}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38b5c2f743cd8034a8beeebf277c92c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  syncInterval: 0.1
-  speed: 30

@@ -51,7 +51,7 @@ public class WallCollider : MonoBehaviour
 
         // add or use existing EdgeCollider2D
         var edge = GetComponent<EdgeCollider2D>() == null ? gameObject.AddComponent<EdgeCollider2D>() : GetComponent<EdgeCollider2D>();
-        edge.sharedMaterial.bounciness = 1;
+        //edge.sharedMaterial.bounciness = 1;
         var edgePoints2d = new[] { (Vector2)bottomLeft, (Vector2)topLeft, (Vector2)topRight, (Vector2)bottomRight, (Vector2)bottomLeft };
         edge.points = edgePoints2d;
         

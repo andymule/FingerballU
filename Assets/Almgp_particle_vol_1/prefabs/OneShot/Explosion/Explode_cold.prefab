@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4646498254806808}
   - component: {fileID: 198919212430800920}
   - component: {fileID: 199518472493565542}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: embers (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4675,7 +4675,7 @@ GameObject:
   - component: {fileID: 4825918594290348}
   - component: {fileID: 198720222101950828}
   - component: {fileID: 199371981510415326}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: embers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9338,7 +9338,7 @@ GameObject:
   - component: {fileID: 4170698635465392}
   - component: {fileID: 198548878214047728}
   - component: {fileID: 199333650887601752}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SubEmitter0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14001,7 +14001,7 @@ GameObject:
   - component: {fileID: 4980521510436614}
   - component: {fileID: 198918576488516308}
   - component: {fileID: 199728565965822330}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Explode_cold
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18613,7 +18613,7 @@ GameObject:
   - component: {fileID: 4367951608967764}
   - component: {fileID: 198803402521260916}
   - component: {fileID: 199900955400778686}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: explode_blow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
